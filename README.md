@@ -75,7 +75,7 @@ You should now be able to chroot into your install by running `$ sudo ./chroot.s
 
 ## Creating a windows terminal profile for this to make the chroot process less annoying
 
-Create a new WSL profile, set icons, name, and whatnot to your liking. In the "command line" section, paste the following, replacing USER and X appropriately:
+Create a new WSL profile, set icons, name, and whatnot to your liking. Be sure to set the "Run this profile as Administrator" option, otherwise it won't work since you need admin permission to mount the drives. If that option is not present, you need to switch the the WT preview app. In the "command line" section, paste the following, replacing USER and X appropriately:
 
 `cmd /c wsl --mount \\.\PHYSICALDRIVEX -p 2 >nul & wsl --mount \\.\PHYSICALDRIVEX -p 1 -t vfat >nul & wsl -d Ubuntu -u root genie -i >null & wsl -u root /home/USER/chroot.sh & wsl --shutdown`
 
